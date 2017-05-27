@@ -80,7 +80,7 @@ input:focus, textarea:focus {
 .alert p:nth-child(2) {
 	font-weight: 700;
 	margin-top: 0;
-	margin-bottom: 10px;
+	line-height: 21px;
 }
 
 /* -----------------------------

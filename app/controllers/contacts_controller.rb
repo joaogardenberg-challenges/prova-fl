@@ -1,15 +1,11 @@
 class ContactsController < ApplicationController
-	def new
-		@contact = Contact.new
-	end
-
 	def create
 		@contact = Contact.new(contact_params)
-		@contact.save
-
-		redirect_to url_for(:controller => :home, :action => :index)
+		
+		if @contact.save
+			redirect_to root_path, notice: '<p>The message was successfully sent.</p>'
+		end
 	end
-
 
 	private
 		def contact_params

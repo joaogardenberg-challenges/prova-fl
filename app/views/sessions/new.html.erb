@@ -1,0 +1,21 @@
+<body>
+	<% if logged_in? %>
+		<% controller.redirect_to tables_path %>
+	<% else %>
+		<%= form_for :session, url: login_path do |f| %>
+			<%= f.text_field :user, placeholder: 'Enter your user...' %>
+			<%= f.password_field :password, placeholder: 'Enter your password...' %>
+			<%= f.submit 'Log in', class: 'btn btn-default' %>
+		<% end %>
+		<% if flash[:success] %>
+			<script>
+				bootstrapAlert('<%= flash[:success].html_safe %>', 'alert-success');
+			</script>
+		<% end %>
+		<% if flash[:danger] %>
+			<script>
+				bootstrapAlert('<%= flash[:danger].html_safe %>', 'alert-danger');
+			</script>
+		<% end %>
+	<% end %>
+</body>

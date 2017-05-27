@@ -1,15 +1,11 @@
 class SubscribesController < ApplicationController
-	def new
-		@subscribe = Subscribe.new
-	end
-
 	def create
 		@subscribe = Subscribe.new(subscribe_params)
-		@subscribe.save
-
-		redirect_to url_for(:controller => :home, :action => :index)
+		
+		if @subscribe.save
+			redirect_to root_path, notice: '<p>Successfully subscribed.</p>'
+		end
 	end
-
 
 	private
 		def subscribe_params

@@ -83,29 +83,7 @@ $(document).ready(function() {
 
 		if (hasError) {
 			e.preventDefault();
-			$('.alert').remove();
-
-			var span = $('<span>', {
-				ariaHidden: 'true'
-			}).html('&times;');
-
-			var button = $('<button>', {
-				type: 'button',
-				class: 'close',
-				dataDismiss: 'alert',
-				ariaLabel: 'Close'
-			}).append(span);
-
-			var alert = $('<div>', {
-				class: 'alert alert-danger alert-dismissible',
-				role: 'alert'
-			}).append(button).append(errors);
-
-			$('body').append(alert);
-			
-			$('.alert button.close').click(function() {
-				$('.alert').remove();
-			});
+			bootstrapAlert(errors, 'alert-danger');
 		}
 	});
 });
@@ -118,4 +96,30 @@ function validateEmail(email) {
 function notEmpty(text) {
 	var re = /([^\s])/
 	return re.test(text);
+}
+
+function bootstrapAlert(text, type) {
+	$('.alert').remove();
+
+	var span = $('<span>', {
+		ariaHidden: 'true'
+	}).html('&times;');
+
+	var button = $('<button>', {
+		type: 'button',
+		class: 'close',
+		dataDismiss: 'alert',
+		ariaLabel: 'Close'
+	}).append(span);
+
+	var alert = $('<div>', {
+		class: 'alert ' + type + ' alert-dismissible',
+		role: 'alert'
+	}).append(button).append(text);
+
+	$('body').append(alert);
+	
+	$('.alert button.close').click(function() {
+		$('.alert').remove();
+	});
 }

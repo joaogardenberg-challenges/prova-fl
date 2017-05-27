@@ -227,6 +227,7 @@
 				<%= f.submit 'Send it', class: 'btn btn-default' %>
 			</div>
 		<% end %>
+		
 		<i class="button fa fa-chevron-up go-to-start"></i>
 	</section>
 	<footer>
@@ -241,4 +242,9 @@
 			</div>
 		</div>
 	</footer>
+	<% if flash[:notice] %>
+		<script>
+			bootstrapAlert('<%= flash[:notice].html_safe %>', 'alert-success');
+		</script>
+	<% end %>
 </body>
