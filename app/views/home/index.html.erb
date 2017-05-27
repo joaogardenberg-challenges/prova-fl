@@ -1,0 +1,244 @@
+<body data-spy="scroll" data-target=".navbar" data-offset="66">
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" alt="Piano">
+					<%= image_tag('navbar/logo.png', alt: 'Piano') %>
+				</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</button>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse navbar-right">
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="#jumbotron">Top</a>
+					</li>
+					<li>
+						<a href="#project">The project</a>
+					</li>
+					<li>
+						<a href="#clients">Clients</a>
+					</li>
+					<li>
+						<a href="#about">About</a>
+					</li>
+					<li>
+						<a href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="jumbotron" class="jumbotron">
+		<div class="container">
+			<h2>We're coming soon</h2>
+			<p>We are working very hard on our new site. Sign up to our newsletter and you'll be one of the first to know when it's ready:</p>
+			<%= form_for :subscribe, url: subscribes_path do |f| %>
+				<%= f.email_field :email, placeholder: 'Enter your email...' %>
+				<%= f.submit 'Subscribe', class: 'btn btn-default' %>
+			<% end %>
+			<i class="button fa fa-chevron-down go-to-time"></i>
+		</div>
+	</div>
+	<section id="time">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-8 text-center">
+					<h3>Ok, but how long does it take?</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+					<div class="divider"></div>
+					<p><span class="number">24</span><span class="letter">d</span><span class="slash">/</span><span class="number">23</span><span class="letter">h</span><span class="slash">/</span><span class="number">58</span><span class="letter">m</span><span class="slash">/</span><span class="number">20</span><span class="letter">s</p>
+				</div>
+				<div class="col-xs-3 offset-xs-1">
+					<%= image_tag('time/clock.png') %>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="project" class="text-center">
+		<h2>The project</h2>
+		<div class="divider"></div>
+		<div class="description container">
+			<p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram lorem.</p>
+		</div>
+		<div class="container">
+		<div class="row">
+			<div class="col-xs-3">
+				<div class="icon">
+					<i class="fa fa-cogs"></i>
+				</div>
+				<h3>New Features</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+			</div>
+			<div class="col-xs-3">
+				<div class="icon">
+					<i class="fa fa-mobile"></i>
+				</div>
+				<h3>Responsive</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+			</div>
+			<div class="col-xs-3">
+				<div class="icon">
+					<i class="fa fa-pencil"></i>
+				</div>
+				<h3>Flat Design</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+			</div>
+			<div class="col-xs-3">
+				<div class="icon">
+					<i class="fa fa-twitter"></i>
+				</div>
+				<h3>Social</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+			</div>
+		</div>
+		</div>
+	</section>
+	<section id="quote" class="text-center">
+		<div class="container">
+			<p>"Success is not the key to happiness. Happiness is the key to success. If you love what you are doing, you will be successful."</p>
+			<p>ALBERT SCHWEITZER</p>
+		</div>
+	</section>
+	<section id="clients">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4">
+					<%= image_tag('time/speech_bubbles.png') %>
+				</div>
+				<div class="col-xs-8 text-center">
+					<h3>What our clients say</h3>
+					<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl.</p>
+					<h4>John Doe, johndoe.com</h4>
+					<div class="row">
+						<%= image_tag('clients/1.jpg', class: 'col-xs-3') %>
+						<%= image_tag('clients/2.jpg', class: 'col-xs-3') %>
+						<%= image_tag('clients/3.jpg', class: 'col-xs-3') %>
+						<%= image_tag('clients/4.jpg', class: 'col-xs-3') %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="experience">
+		<div class="container">
+			<div class="row text-center">
+				<div class="col-xs-3">
+					<h3>We have the experience:</h3>
+				</div>
+				<div class="col-xs-3">
+					<h4>15</h4>
+					<p>Years of experience</p>
+				</div>
+				<div class="col-xs-3">
+					<h4>348</h4>
+					<p>Projects completed</p>
+				</div>
+				<div class="col-xs-3">
+					<h4>16179</h4>
+					<p>Lines of code</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="about" class="text-center">
+		<h2>About us</h2>
+		<div class="divider"></div>
+		<div class="container">
+			<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud.</p>
+		</div>
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="row">
+					<%= image_tag('about/1.jpg', class: 'col-xs-3 pull-right') %>
+					<div class="col-xs-8 pull-right">
+						<h3>Jane Doe</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+						<div class="social">
+							<i class="fa fa-facebook"></i>
+							<i class="fa fa-dribbble"></i>
+							<i class="fa fa-twitter"></i>
+							<i class="fa fa-pinterest"></i>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<%= image_tag('about/3.jpg', class: 'col-xs-3 pull-right') %>
+					<div class="col-xs-8 pull-right">
+						<h3>Sarah Red</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+						<div class="social">
+							<i class="fa fa-facebook"></i>
+							<i class="fa fa-dribbble"></i>
+							<i class="fa fa-twitter"></i>
+							<i class="fa fa-pinterest"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="row">
+					<%= image_tag('about/2.jpg', class: 'col-xs-3') %>
+					<div class="col-xs-8">
+						<h3>Tim Brown</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+						<div class="social left">
+							<i class="fa fa-facebook"></i>
+							<i class="fa fa-dribbble"></i>
+							<i class="fa fa-twitter"></i>
+							<i class="fa fa-pinterest"></i>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<%= image_tag('about/4.jpg', class: 'col-xs-3') %>
+					<div class="col-xs-8">
+						<h3>James White</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
+						<div class="social left">
+							<i class="fa fa-facebook"></i>
+							<i class="fa fa-dribbble"></i>
+							<i class="fa fa-twitter"></i>
+							<i class="fa fa-pinterest"></i>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="contact-msg">
+		<div class="container text-center">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+			<button type="button" class="btn btn-default go-to-contact">Contact us now!</button>
+		</div>
+	</section>
+	<section id="contact" class="text-center">
+		<h2>Contact us</h2>
+		<div class="divider"></div>
+		<div class="description container">
+			<p>For every question, information or just to say "Hi", here you can get in touch with us. Just fill in the form below and we'll reply as soon as possible.</p>
+		</div>
+		<%= form_for :contact, url: contacts_path do |f| %>
+			<div class="container">
+				<%= f.email_field :email, placeholder: 'Email...' %>
+				<%= f.text_field :subject, placeholder: 'Subject...' %>
+				<%= f.text_area :message, placeholder: 'Message...' %>
+				<%= f.submit 'Send it', class: 'btn btn-default' %>
+			</div>
+		<% end %>
+		<i class="button fa fa-chevron-up go-to-start"></i>
+	</section>
+	<footer>
+		<div class="container">
+			<p>&copy; Piano Bootstrap Template by Azmind.</p>
+			<div class="social">
+				<i class="fa fa-facebook"></i>
+				<i class="fa fa-dribbble"></i>
+				<i class="fa fa-twitter"></i>
+				<i class="fa fa-google-plus"></i>
+				<i class="fa fa-pinterest"></i>
+			</div>
+		</div>
+	</footer>
+</body>
