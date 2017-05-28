@@ -54,7 +54,7 @@ $(document).ready(function() {
 			hasError = true;
 		}
 
-		if (!notEmpty($('#contact_message').val()) || !notMax($('#contact_message').val(), 255)) {
+		if (!notEmpty($('#contact_message').val()) || !notMax($('#contact_message').val(), 800)) {
 			errors += '<p>You must write between 1 and 800 characters in the message field.</p>';
 			hasError = true;
 		}
