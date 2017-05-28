@@ -74,6 +74,10 @@ $(document).ready(function() {
 			$('#admin_box').removeClass('open').addClass('closed');
 		}
 	});
+
+	$(document).click(function() {
+		$('.collapse').collapse('hide');
+	});
 });
 
 function validateEmail(email) {
