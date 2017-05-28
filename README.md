@@ -9,3 +9,7 @@
 * Made with: Sublime Text 3 Build 3126
 
 * Heroku URL: https://vast-shelf-45637.herokuapp.com/
+
+* User of the admin login form: **fulllab**
+
+* Password of the admin login form: **rails**
