@@ -1,24 +1,11 @@
-# README
+# Prova de Estágio para a Fulllab
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby version: 5.1.1
 
-Things you may want to cover:
+* Rails version: 2.4.1
 
-* Ruby version
+* Made in OS: Ubuntu 16.04.2 LTS (64-bit)
 
-* System dependencies
+* Made with: Sublime Text 3 Build 3126
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Heroku URL: https://immense-wildwood-78605.herokuapp.com/
