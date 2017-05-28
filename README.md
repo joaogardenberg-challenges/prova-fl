@@ -1,15 +1,24 @@
 # Prova de Estágio para a Fulllab
 
-* Ruby version: 5.1.1
+## Informações
 
-* Rails version: 2.4.1
+Versão do Ruby: 5.1.1
 
-* Made in OS: Ubuntu 16.04.2 LTS (64-bit)
+Versão do Rails: 2.4.1
 
-* Made with: Sublime Text 3 Build 3126
+Feito no OS: Ubuntu 16.04.2 LTS (64-bit)
 
-* Heroku URL: https://afternoon-ravine-40365.herokuapp.com/
+Feito com: Sublime Text 3 Build 3126
 
-* User of the admin login form: **fulllab**
+## Heroku
 
-* Password of the admin login form: **rails**
+Heroku url: https://afternoon-ravine-40365.herokuapp.com/
+
+## Admin Login
+
+Clique no botão do canto inferior direito da tela, na página inicial. Vai subir um painel com um botão para ir para a página de admin.
+Ou então acesse através deste link: https://afternoon-ravine-40365.herokuapp.com/login
+
+* Usuário: **fulllab**
+
+* Senha: **rails**
