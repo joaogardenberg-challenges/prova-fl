@@ -3,14 +3,12 @@
   <head>
     <title>Prova Fulllab</title>
     <%= csrf_meta_tags %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Open+Sans:300,700' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'https://use.fontawesome.com/944949779d.js' %>
   </head>
-
-  <!--body-->
+  <body data-spy="scroll" data-target=".navbar" data-offset="66">
     <%= yield %>
-  <!--/body-->
+  </body>
 </html>

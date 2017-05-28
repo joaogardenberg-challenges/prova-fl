@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 	def index
-		@admin = Admin.new(user: 'fulllab', password: 'rails')
-		@admin.save
+		#@admin = Admin.new(user: 'fulllab', password: 'rails')
+		#@admin.save
 	end
 
 	def admin

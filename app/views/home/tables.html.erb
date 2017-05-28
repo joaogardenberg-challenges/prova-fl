@@ -1,46 +1,66 @@
-<body>
-	<style>
-		table, th, td {
-		   border: 1px solid black;
-		   padding: 10px;
-		}
-	</style>
-	<% if logged_in? %>
-		<table>
-			<tr>
-				<th>id</th>
-				<th>email</th>
-			</tr>
-			<% @subscribes.each do |s| %>
+<% if logged_in? %>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#" alt="Piano">
+					<%= image_tag('navbar/logo.png', alt: 'Piano') %>
+				</a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+					<i class="fa fa-bars" aria-hidden="true"></i>
+				</button>
+			</div>
+			<div id="navbar" class="navbar-right">
+				<ul class="nav navbar-nav">
+					<li>
+						<%= link_to 'Back to main page', root_path, method: :get %>
+					</li>
+					<li>
+						<%= link_to 'Log out', logout_path, method: :delete %>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="jumbotron">
+		<div class="container">
+			<h2>Admin Panel</h2>
+			<p class="reverse">Subscribes</p>
+			<table class="table table-bordered table-responsive">
 				<tr>
-					<td><%= s.id %></td>
-					<td><%= s.email %></td>
+					<th>#</th>
+					<th>email</th>
 				</tr>
-			<% end %>
-		</table>
-		<table>
-			<tr>
-				<th>id</th>
-				<th>email</th>
-				<th>subject</th>
-				<th>message</th>
-			</tr>
-			<% @contacts.each do |c| %>
+				<% @subscribes.each do |s| %>
+					<tr>
+						<td scope="row"><%= s.id %></td>
+						<td><%= s.email %></td>
+					</tr>
+				<% end %>
+			</table>
+			<p class="reverse">Contacts</p>
+			<table class="table table-bordered table-responsive">
 				<tr>
-					<td><%= c.id %></td>
-					<td><%= c.email %></td>
-					<td><%= c.subject %></td>
-					<td><%= c.message %></td>
+					<th>#</th>
+					<th>email</th>
+					<th>subject</th>
+					<th>message</th>
 				</tr>
-			<% end %>
-		</table>
-		<%= button_to 'Log out', logout_path, method: :delete, class: 'btn btn-default' %>
-		<% if flash[:notice] %>
-			<script>
-				bootstrapAlert('<%= flash[:notice].html_safe %>', 'alert-success');
-			</script>
-		<% end %>
-	<% else %>
-		<% controller.redirect_to root_path %>
+				<% @contacts.each do |c| %>
+					<tr>
+						<td><%= c.id %></td>
+						<td><%= c.email %></td>
+						<td><%= c.subject %></td>
+						<td><%= c.message %></td>
+					</tr>
+				<% end %>
+			</table>
+		</div>
+	</div>
+	<% if flash[:notice] %>
+		<script>
+			bootstrapAlert('<%= flash[:notice].html_safe %>', 'alert-success');
+		</script>
 	<% end %>
-</body>
+<% else %>
+	<% controller.redirect_to root_path %>
+<% end %>

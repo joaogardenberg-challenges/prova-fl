@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       log_in admin
       redirect_to tables_path, notice: '<p>You are now logged in.</p>'
   	else
-      flash[:danger] = '<p>You are not an admin.</p>'
+      flash[:danger] = '<p>Invalid admin credentials.</p>'
   		render 'new'
   	end
   end

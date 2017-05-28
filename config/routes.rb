@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 	resources	:subscribes
 	resources	:contacts
 	resources	:home
+	#get			'*path',	to: redirect('/')
 end

@@ -2,19 +2,19 @@ $(document).ready(function() {
 	$('.go-to-start').click(function() {
 		$('html, body').animate({
 			scrollTop: 0
-		}, 500);
+		}, 300);
 	});
 
 	$('.go-to-time').click(function() {
 		$('html, body').animate({
 			scrollTop: ($('#time').offset().top - $('.navbar').height())
-		}, 500);
+		}, 300);
 	});
 
 	$('.go-to-contact').click(function() {
 		$('html, body').animate({
 			scrollTop: ($('#contact').offset().top - $('.navbar').height())
-		}, 500);
+		}, 300);
 	});
 
 	$('#navbar a').click(function(e) {
@@ -22,43 +22,21 @@ $(document).ready(function() {
 
 		$('html, body').animate({
 			scrollTop: ($($(this).attr('href')).offset().top - $('.navbar').height())
-		}, 500);
+		}, 300);
 	});
 
 	$('form[action="/subscribes"]').submit(function(e) {
 		var errors = '<p>The form was not submitted.</p>';
 		var hasError = false;
 
-		if (!validateEmail($('#subscribe_email').val())) {
+		if (!validateEmail($('#subscribe_email').val()) || !notMax($('#contact_email').val(), 255)) {
 			errors += '<p>You must write a valid email.</p>';
 			hasError = true;
 		}
 
 		if (hasError) {
 			e.preventDefault();
-			$('.alert').remove();
-
-			var span = $('<span>', {
-				ariaHidden: 'true'
-			}).html('&times;');
-
-			var button = $('<button>', {
-				type: 'button',
-				class: 'close',
-				dataDismiss: 'alert',
-				ariaLabel: 'Close'
-			}).append(span);
-
-			var alert = $('<div>', {
-				class: 'alert alert-danger alert-dismissible',
-				role: 'alert'
-			}).append(button).append(errors);
-
-			$('body').append(alert);
-
-			$('.alert button.close').click(function() {
-				$('.alert').remove();
-			});
+			bootstrapAlert(errors, 'alert-danger');
 		}
 	});
 
@@ -66,24 +44,34 @@ $(document).ready(function() {
 		var errors = '<p>The form was not submitted.</p>';
 		var hasError = false;
 
-		if (!validateEmail($('#contact_email').val())) {
+		if (!validateEmail($('#contact_email').val()) || !notMax($('#contact_email').val(), 255)) {
 			errors += '<p>You must write a valid email.</p>';
 			hasError = true;
 		}
 
-		if (!notEmpty($('#contact_subject').val())) {
-			errors += '<p>You must write a subject.</p>';
+		if (!notEmpty($('#contact_subject').val()) || !notMax($('#contact_subject').val(), 255)) {
+			errors += '<p>You must write between 1 and 255 characters in the subject field.</p>';
 			hasError = true;
 		}
 
-		if (!notEmpty($('#contact_message').val())) {
-			errors += '<p>You must write a message.</p>';
+		if (!notEmpty($('#contact_message').val()) || !notMax($('#contact_message').val(), 255)) {
+			errors += '<p>You must write between 1 and 800 characters in the message field.</p>';
 			hasError = true;
 		}
 
 		if (hasError) {
 			e.preventDefault();
 			bootstrapAlert(errors, 'alert-danger');
+		}
+	});
+
+	$('#admin_box .button i').unbind('click').click(function() {
+		if ($('#admin_box').hasClass('closed')) {
+			$(this).removeClass('fa-chevron-up').addClass('fa-chevron-down');
+			$('#admin_box').removeClass('closed').addClass('open');
+		} else {
+			$(this).removeClass('fa-chevron-down').addClass('fa-chevron-up');
+			$('#admin_box').removeClass('open').addClass('closed');
 		}
 	});
 });
@@ -96,6 +84,10 @@ function validateEmail(email) {
 function notEmpty(text) {
 	var re = /([^\s])/
 	return re.test(text);
+}
+
+function notMax(text, max) {
+	return text.length > max? false:true;
 }
 
 function bootstrapAlert(text, type) {
