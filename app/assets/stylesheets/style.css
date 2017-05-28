@@ -140,7 +140,7 @@ input:focus, textarea:focus {
 ----- Jumbotron
 ----------------------------- */
 #jumbotron {
-	background-image: url('backgrounds/1.jpg');
+	background-image: asset-url('backgrounds/1.jpg', image);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
