@@ -30,9 +30,9 @@
 					<th>#</th>
 					<th>email</th>
 				</tr>
-				<% @subscribes.each do |s| %>
+				<% @subscribes.each_with_index do |s, i| %>
 					<tr>
-						<td scope="row"><%= s.id %></td>
+						<td scope="row"><%= i + 1 %></td>
 						<td><%= s.email %></td>
 					</tr>
 				<% end %>
@@ -45,9 +45,9 @@
 					<th>subject</th>
 					<th>message</th>
 				</tr>
-				<% @contacts.each do |c| %>
+				<% @contacts.each_with_index do |c, i| %>
 					<tr>
-						<td><%= c.id %></td>
+						<td><%= i + 1 %></td>
 						<td><%= c.email %></td>
 						<td><%= c.subject %></td>
 						<td><%= c.message %></td>
